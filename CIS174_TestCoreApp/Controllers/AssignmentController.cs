@@ -10,15 +10,15 @@ namespace CIS174_TestCoreApp.Controllers
 	public class AssignmentController : Controller
 	{
 		[Route("Assignment/{permission?}")]
-		public IActionResult Index(int permissionId = 1)
+		public IActionResult Index(int permission = 1)
 		{
-			ViewBag.PermissionId = permissionId;
+			ViewBag.PermissionId = permission;
 
 			List<Student> studentData = new List<Student>();
-			studentData.Add(new Student("Mike", "Dylan", "15/20"));
-			studentData.Add(new Student("Gabe", "Smith", "21/20"));
-			studentData.Add(new Student("Jerome", "Rivers", "4/20"));
-			studentData.Add(new Student("Donnie", "Troomp", "0/20"));
+			studentData.Add(new Student("Mike", "Dylan", "B"));
+			studentData.Add(new Student("Gabe", "Smith", "A+"));
+			studentData.Add(new Student("Jerome", "Rivers", "F"));
+			studentData.Add(new Student("Donnie", "Troomp", "Expelled"));
 
 			return View("Index", studentData);
 		}

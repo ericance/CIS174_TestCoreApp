@@ -1,10 +1,53 @@
 ﻿@model List<Student>
 @{ 
-    ViewData["Title"] = "Assignment";
+    ViewData["Title"] = "Permission";
 }
 
 <h1>Assignment 6.1 Student Data</h1>
-@if (ViewBag.AssignmentId <= 1)
+@if (ViewBag.PermissionId <= 1)
 {
     <label>You do not have access to view this data.</label>
+}
+else if ((ViewBag.PermissionId >= 2) && (ViewBag.PermissionId < 8))
+{
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>First Name</th>
+                <th>Last Name</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach(var student in Model)
+            {
+            <tr>
+                <td>@student.FirstName</td>
+                <td>@student.LastName</td>
+            </tr>
+            }
+        </tbody>
+    </table>
+}
+else if(ViewBag.PermissionId >= 8 && ViewBag.PermissionId <= 10)
+{
+    <label>Hey, Welcome to being a powerful Admin!</label>
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Grade</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var student in Model)
+            {
+            <tr>
+                <td>@student.FirstName</td>
+                <td>@student.LastName</td>
+                <td>@student.Grade</td>
+             </tr>
+            }
+        </tbody>
+    </table>
 }
