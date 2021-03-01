@@ -11,12 +11,6 @@ namespace CIS174_TestCoreApp.Controllers
 {
 	public class HomeController : Controller
 	{
-		private StudentContext context { get; set; }
-		
-		public HomeController(StudentContext ctx)
-		{
-			context = ctx;
-		}
 
 		[Route("/")]
 		public IActionResult Index()

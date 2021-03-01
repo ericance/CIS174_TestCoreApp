@@ -1,0 +1,10 @@
+﻿@model List<Student>
+@{ 
+    ViewData["Title"] = "Assignment";
+}
+
+<h1>Assignment 6.1 Student Data</h1>
+@if (ViewBag.AssignmentId <= 1)
+{
+    <label>You do not have access to view this data.</label>
+}
